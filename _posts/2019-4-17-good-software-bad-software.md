@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Goals
+title: Good software bad software
 ---
 
 Over the years I've written quite a bit of software. Some of it has been great, and some of it has been not so great. There have been a few core things I've noticed when looking at what has distinguised my software from being good or bad.
