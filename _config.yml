@@ -1,6 +1,6 @@
 name: Aaron Rumery
 description: Software Engineer
-avatar: https://raw.githubusercontent.com/bloodhawk/bloodhawk.github.io/master/me.jpeg
+avatar: https://raw.githubusercontent.com/bloodhawk/bloodhawk.github.io/master/images/me.jpeg
 
 footer-links:
   email: aaronrumery@gmail.com
@@ -19,7 +19,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    css_class: 'highlight'
+    css_class: "highlight"
 sass:
   style: :expanded
 gems:
