@@ -1,4 +1,4 @@
-A functor is an object that implements a map method. A monad is a special type of functor that implements a .flatMap method
+A functor is an object that implements a `map` method. A monad is a special type of functor that implements a `flatMap` method
 
 At first glance, this doesn't seem very interesting. However, let's give some examples of monads in Scala that can completely change how you think about programming: the Try and Option monads
 
