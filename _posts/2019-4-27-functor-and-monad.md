@@ -43,4 +43,6 @@ Well, our `getMilli` method controls this. `getMilli` first checks that a `times
 
 The same concepts above are used with `Try`. A `Try` can be a `Success` or a `Failure`. `Success` is analogous to `Some`, and `Failure` is analogous to `None`. This allows you to think about success and failures as simply data rather than typical exceptions. They also operate in the same way as `Option` does. In fact, you can convert a `Try` to an `Option` with `toOption` method if you want to treat it as such.
 
+You may be asking yourself now. What is the purpose of `flatMap` then? Well, what happens if my `map` returns a `Some` or a `None`? I don't want a container inside a container. That is the job of `flatMap` -- to flatten the container down from something like `Some(Some(value))` to `Some(value)`. Or, a more horrible situation a `Some(None)` which seems like a bad situation waiting to happen. `flatMap` would take `Some(None)` down to a `None`.
+
 With these two simple monads, we have removed the concept of traditional exceptions and prevented a possible exception -- the infamous `NullPointerException`. Play with these concepts. They are truly powerful and will change how you think about programming.
