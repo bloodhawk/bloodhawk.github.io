@@ -11,7 +11,7 @@ Let's look at the code below to discuss these monads
 
 ```scala
   private def isNumber(str: String): Boolean = str.forall(_.isDigit)
-  private def getMilli(t: Option[String]):Option[Long] = {
+  private def getMilli(t: Option[String]): Option[Long] = {
     params.get("timestamp").filter(isNumber).map(x => x.toLong)
       .filter(x => x > 0 && x < System.currentTimeMillis())
   }
