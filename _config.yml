@@ -1,7 +1,7 @@
 name: Aaron Rumery
 description: Software Engineer
 avatar: https://aaronrumery.engineer/images/me.jpeg
-avatar_share: https://aaronrumery.engineer/images/me_share.jpeg
+sharing: https://aaronrumery.engineer/images/me_share.jpeg
 
 footer-links:
   email: aaronrumery@gmail.com
@@ -11,7 +11,7 @@ footer-links:
 
 disqus: aaronrumery-engineer
 
-url: http://bloodhawk.github.io
+url: https://bloodhawk.github.io
 
 baseurl: ""
 permalink: /:title/
