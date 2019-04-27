@@ -33,6 +33,7 @@ Let's look at the code below to discuss these monads
 ```
 
 Here are some simple methods implementing a pretty standard REST endpoint to get at some analytics for the hour.
+You could call this doing: `GET /analytics?timestamp=1556386553`
 
 The first thing to understand is that `params.get` method returns an `Option` type which can either be of `Some(value)` or `None`. `Some` and `None` are also monads as they implement `.map` and `.flatMap`. They are in essence child monads of the parent `Option` monad. This hints at the power of how polymorphism is not lost when switching over to the usage of monads.
 
