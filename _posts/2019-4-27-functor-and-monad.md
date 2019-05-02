@@ -10,6 +10,10 @@ From the documentation
 Let's look at the code below to discuss these monads
 
 ```scala
+class AnalyticsServlet extends ScalatraServlet with DBSessionSupport {
+  val MILLI_IN_HALF_HOUR = 1800000L
+  val logger: Logger = LoggerFactory.getLogger(getClass)
+
   private def parseLong(s: String): Option[Long] = {
     val parsedValue = Try { Some(s.toLong) }
     parsedValue.getOrElse(None)
@@ -17,27 +21,25 @@ Let's look at the code below to discuss these monads
 
   private def getMilli(t: Option[String]): Option[Long] = {
     t.flatMap(parseLong)
-      .filter(x => x > 0 && x < System.currentTimeMillis())
+      .filter(x => x > MILLI_IN_HALF_HOUR && x < System.currentTimeMillis())
   }
-
 
   get("/analytics") {
 
-    val MILLI_IN_HALF_HOUR = 1800000L
     val milli = getMilli(params.get("timestamp"))
     milli.getOrElse(halt(400, "You must provide a valid timestamp"))
 
-    val analyticAggResult = Try {
-      milli.map(x => (new Timestamp(x - MILLI_IN_HALF_HOUR), new Timestamp(x + MILLI_IN_HALF_HOUR)))
-        .map(x => AnalyticDAO.getBetween(x._1, x._2))
-        .get
-    }
+    val analyticAggResult = milli
+      .map(x => (new Timestamp(x - MILLI_IN_HALF_HOUR), new Timestamp(x + MILLI_IN_HALF_HOUR)))
+      .map(x => AnalyticDAO.getBetween(x._1, x._2))
+      .get
 
     analyticAggResult.getOrElse({
       logger.error(analyticAggResult.toString)
       InternalServerError()
     })
   }
+  ...
 ```
 
 Here are some simple methods implementing a pretty standard REST endpoint to get at some analytics for the hour.
