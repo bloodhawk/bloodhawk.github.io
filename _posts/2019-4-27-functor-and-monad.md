@@ -10,7 +10,7 @@ From the documentation
 Let's look at the code below to discuss these monads
 
 ```scala
-private def parseLong(s: String): Option[Long] = {
+  private def parseLong(s: String): Option[Long] = {
     val parsedValue = Try { Some(s.toLong) }
     parsedValue.getOrElse(None)
   }
