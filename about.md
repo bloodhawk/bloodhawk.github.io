@@ -14,4 +14,4 @@ I work with the belief that you must enable others and mentor them. Most importa
 
 ![Mailbox]({{ site.baseurl }}/images/mailbox.gif)
 
-[aaronrumery@gmail.com](mailto:aaronrumery@gmail.com)
+[arumery@pm.me](mailto:aaronrumery@gmail.com)
